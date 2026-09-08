@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Mhizha - Curriculum Vitae (CV)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent: #0284c7;
+      --text: #1e293b;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+      --bg-pill: #f1f5f9;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--text);
+      background-color: #f8fafc;
+      line-height: 1.55;
+      font-size: 13.5px;
+      -webkit-font-smoothing: antialiased;
+      padding: 30px 15px;
+    }
+
+    .cv-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 44px 48px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    /* Header */
+    .cv-header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .cv-name {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 4px;
+      text-transform: capitalize;
+    }
+
+    .cv-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .contact-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .contact-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-bar a:hover {
+      color: var(--accent);
+    }
+
+    .contact-bar i {
+      color: var(--primary);
+      margin-right: 4px;
+      font-size: 11px;
+    }
+
+    .contact-bar .sep {
+      color: #94a3b8;
+      font-size: 10px;
+    }
+
+    .contact-info a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      color: var(--accent);
+    }
+
+    .contact-info i {
+      color: var(--primary);
+      margin-right: 4px;
+    }
+
+    /* Section Styles */
+    .cv-section {
+      margin-bottom: 22px;
+    }
+
+    .section-heading {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-heading i {
+      color: var(--accent);
+      font-size: 15px;
+    }
+
+    /* Summary */
+    .summary-text {
+      color: var(--text-muted);
+      font-size: 13.5px;
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    /* Experience Items */
+    .job-item {
+      margin-bottom: 18px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 3px;
+    }
+
+    .job-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .job-company {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .job-period {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    .job-bullets {
+      padding-left: 18px;
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .job-bullets li {
+      margin-bottom: 4.5px;
+      line-height: 1.55;
+    }
+
+    .job-bullets strong {
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 12px;
+    }
+
+    .skill-category {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+
+    .skill-category-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .skill-category-text {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Education */
+    .edu-item {
+      margin-bottom: 12px;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .edu-degree {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .edu-school {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .edu-grade {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #047857;
+    }
+
+    /* References */
+    .references-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .ref-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 9px 12px;
+    }
+
+    .ref-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .ref-title {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .ref-contact {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    /* Print Controls */
+    .print-bar {
+      max-width: 850px;
+      margin: 0 auto 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-print:hover {
+      background: var(--primary-dark);
+      color: #fff;
+    }
+
+    .btn-back {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .btn-back:hover {
+      color: var(--primary);
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 10mm 12mm;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .cv-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-bar {
+        display: none !important;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .contact-info {
+        text-align: left;
+      }
+      .references-grid {
+        grid-template-columns: 1fr;
+      }
+      .cv-container {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar -->
+  <div class="print-bar">
+    <a href="index.html" class="btn-back"><i class="bi bi-arrow-left"></i> Back to Portfolio</a>
+    <button onclick="window.print()" class="btn-print"><i class="bi bi-printer-fill"></i> Print / Save as PDF</button>
+  </div>
+
+  <div class="cv-container">
+
+    <!-- Header -->
+    <header class="cv-header">
+      <h1 class="cv-name">Michael Mhizha</h1>
+      <div class="cv-title">Senior Software Engineer &bull; Backend Specialist</div>
+      <div class="contact-bar">
+        <span><i class="bi bi-geo-alt-fill"></i> 16545 Brundish, Chinhoyi, Zimbabwe</span>
+        <span class="sep">&bull;</span>
+        <span><i class="bi bi-telephone-fill"></i> <a href="tel:+263783913244">+263 783 913 244</a></span>
+        <span class="sep">&bull;</span>
+        <span><i class="bi bi-envelope-fill"></i> <a href="mailto:mmhizha96@gmail.com">mmhizha96@gmail.com</a></span>
+      </div>
+      <div class="contact-bar">
+        <span><i class="bi bi-globe"></i> <a href="https://mmhizha96.github.io/mysitemike/" target="_blank">Portfolio: mmhizha96.github.io/mysitemike</a></span>
+        <span class="sep">&bull;</span>
+        <span><i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/in/michael-mhizha-a708a0170" target="_blank">linkedin.com/in/michael-mhizha-a708a0170</a></span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="cv-section">
+      <h2 class="section-heading"><i class="bi bi-person-lines-fill"></i> Professional Summary</h2>
+      <p class="summary-text">
+        Accomplished <strong>Senior Software Engineer</strong> and <strong>Backend Specialist</strong> with 3+ years of production experience architecting high-throughput enterprise web applications, transactional double-entry financial accounting engines, automated payroll microservices, and distributed cloud deployments. Proven expertise in <strong>ASP.NET Core (C#)</strong>, <strong>Laravel (PHP)</strong>, <strong>Java</strong>, <strong>Angular</strong>, <strong>MySQL</strong>, <strong>Docker Swarm</strong>, and <strong>Nginx</strong> load balancing. Strong background in relational database optimization, OpenAPI 3.0 API design, multi-tenant RBAC security, and technical team mentorship.
+      </p>
+    </section>
+
+    <!-- Core Technical Skills -->
+    <section class="cv-section">
+      <h2 class="section-heading"><i class="bi bi-code-slash"></i> Technical Competencies</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-category-title">Backend &amp; Microservices Architecture</div>
+          <div class="skill-category-text">ASP.NET Core (C#), Laravel (PHP), Java Spring, RESTful APIs, OpenAPI 3.0 (Swagger), Apache Kafka (Event Messaging), Keycloak SSO (Multi-Realm / <code>X-Realm</code>), JWT, RBAC, Double-Entry General Ledger Engines.</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Cloud Infrastructure &amp; DevOps</div>
+          <div class="skill-category-text">Docker, Docker Swarm (Clustering &amp; Scaling), Nginx (Reverse Proxy &amp; Upstream Load Balancing), MinIO (S3-Compatible Storage), Linux/Ubuntu Server, CI/CD Workflows, Git.</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Database Engineering &amp; Data Modeling</div>
+          <div class="skill-category-text">MySQL, Relational Database Normalization, Index Optimization, Multi-Tenant Partitioning, Transactional Integrity, Audit Trails &amp; Change Logging.</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Frontend &amp; Soft Skills</div>
+          <div class="skill-category-text">Angular (15+), TypeScript, JavaScript (ES6+), Bootstrap 5, Chart.js, Technical Team Leadership, Code Reviews, Architecture Documentation, Mentoring.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="cv-section">
+      <h2 class="section-heading"><i class="bi bi-briefcase-fill"></i> Work Experience</h2>
+
+      <!-- CUT -->
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Software Developer (Acting Software Engineer)</span> &mdash;
+            <span class="job-company">Chinhoyi University of Technology</span>
+          </div>
+          <span class="job-period">March 2023 &ndash; Present</span>
+        </div>
+        <ul class="job-bullets">
+          <li><strong>Development Supervision &amp; Leadership:</strong> Supervise software development processes, conduct peer code reviews, and establish architectural standards across enterprise university applications.</li>
+          <li><strong>Hostel Management System (Sole Developer):</strong> Designed and built an accommodation platform managing 10 hostels, 651 rooms, student self-service applications, automated allocation algorithms, and subwarden RBAC.</li>
+          <li><strong>ICT Asset Register (Core Developer):</strong> Engineered lifecycle tracking for 2,182+ hardware/software assets across 16 regions with real-time acquisition analytics, technician allocation, and disposal batch workflows.</li>
+          <li><strong>Payroll Engine &amp; General Ledger Microservices (Backend Developer):</strong> Engineered high-concurrency payroll calculations (tax bands, proration, locked PDF payslips) and a double-entry accounting engine with strict debit/credit parity.</li>
+          <li><strong>Infrastructure &amp; Swarm Clustering:</strong> Configured and deployed production environments utilizing <strong>Docker Swarm</strong> and <strong>Nginx</strong> for horizontal service replication, SSL termination, and zero-downtime rolling releases.</li>
+          <li><strong>Core UIS Maintenance:</strong> Maintained and updated the primary University Information System (UIS) source code to satisfy evolving institutional and academic workflows.</li>
+        </ul>
+      </div>
+
+      <!-- Fuser -->
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Sales Representative &amp; ICT Specialist</span> &mdash;
+            <span class="job-company">Fuser Technologies, Harare</span>
+          </div>
+          <span class="job-period">August 2022 &ndash; February 2023</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Demonstrated ICT software and hardware solutions to corporate clients, evaluating customer requirements to deliver tailored enterprise setups.</li>
+          <li>Provided technical advisory, customer onboarding, and after-sales support, increasing user retention and satisfaction.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="cv-section">
+      <h2 class="section-heading"><i class="bi bi-mortarboard-fill"></i> Education</h2>
+      <div class="edu-item">
+        <div class="edu-header">
+          <div>
+            <div class="edu-degree">Bachelor of Science Honours Degree in Information Technology</div>
+            <div class="edu-school">Chinhoyi University of Technology</div>
+          </div>
+          <div class="text-end">
+            <span class="job-period">Aug 2017 &ndash; Dec 2021</span><br>
+            <span class="edu-grade">Graduated with a First-Class Degree</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-header">
+          <div>
+            <div class="edu-degree">Advanced Level (A-Level)</div>
+            <div class="edu-school">High School Studies</div>
+          </div>
+          <div class="text-end">
+            <span class="job-period">Jan 2014 &ndash; Dec 2015</span><br>
+            <span class="edu-grade">Awarded 3 A-Level Passes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional References -->
+    <section class="cv-section">
+      <h2 class="section-heading"><i class="bi bi-people-fill"></i> Professional References</h2>
+      <div class="references-grid">
+        <div class="ref-card">
+          <div class="ref-name">Dr. S. Chinofunga</div>
+          <div class="ref-title">Executive ICT Director &bull; Chinhoyi University of Technology</div>
+          <a href="tel:077846500" class="ref-contact"><i class="bi bi-telephone"></i> 077846500</a>
+        </div>
+        <div class="ref-card">
+          <div class="ref-name">Mr. E. Maguvue</div>
+          <div class="ref-title">Software Development Manager &bull; Chinhoyi University of Technology</div>
+          <a href="tel:0773593422" class="ref-contact"><i class="bi bi-telephone"></i> 0773593422</a>
+        </div>
+        <div class="ref-card">
+          <div class="ref-name">Mr. L. Simango</div>
+          <div class="ref-title">Software Engineer &bull; Chinhoyi University of Technology</div>
+          <a href="tel:0719389639" class="ref-contact"><i class="bi bi-telephone"></i> 0719389639</a>
+        </div>
+        <div class="ref-card">
+          <div class="ref-name">Mrs. Mangarai</div>
+          <div class="ref-title">Supervisor &bull; Fuser Technologies</div>
+          <a href="tel:0783464355" class="ref-contact"><i class="bi bi-telephone"></i> 0783464355</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
